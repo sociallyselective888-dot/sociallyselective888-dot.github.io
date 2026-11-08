@@ -11,22 +11,19 @@ $('#searchClose').addEventListener('click',()=>{searchPanel.classList.remove('op
 searchInput.addEventListener('input',()=>filterProducts('search',searchInput.value));
 
 function filterProducts(category, term=''){
-  const cards=$$('.product-card'); let visible=0;
+  const cards=$$('.product-card');
+  const counts=new Map();
   cards.forEach(card=>{
-    const categoryMatch=category==='all'||category==='search'||card.dataset.category===category;
-    const scaleMatch=['1:18','1:24','1:64'].includes(category)?card.dataset.scale===category:true;
-    const searchMatch=category!=='search'||card.dataset.name.toLowerCase().includes(term.toLowerCase());
-    const show=categoryMatch&&scaleMatch&&searchMatch;
-    card.style.display=show?'':'none'; if(show) visible++;
+    const show=category!=='search'||card.dataset.name.toLowerCase().includes(term.toLowerCase());
+    card.style.display=show?'':'none';
+    if(show) counts.set(card.closest('.collection-section')?.id,(counts.get(card.closest('.collection-section')?.id)||0)+1);
   });
-  $('#resultsCount').textContent=`${String(visible).padStart(2,'0')} MODELS`;
+  $$('.collection-section').forEach(section=>{
+    const count=counts.get(section.id)||0;
+    const label=section.querySelector('.results-count');
+    if(label) label.textContent=`${String(count).padStart(2,'0')} MODELS`;
+  });
 }
-$$('.filter-btn').forEach(btn=>btn.addEventListener('click',()=>{
-  $$('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');filterProducts(btn.dataset.category);
-}));
-$$('.scale-card').forEach(card=>card.addEventListener('click',()=>{
-  const scale=card.dataset.filter;$$('.filter-btn').forEach(b=>b.classList.remove('active'));filterProducts(scale);
-}));
 
 function toast(message){const t=$('#toast');t.textContent=message;t.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.classList.remove('show'),2300);}
 $$('.quick-add').forEach(btn=>btn.addEventListener('click',()=>{
