@@ -3,8 +3,42 @@
 @media(max-width:650px){.announcement{font-size:7px;letter-spacing:1px}.site-header{height:68px}.header-inner{padding:0 17px;gap:12px}.brand{font-size:22px}.brand-mark{width:32px;height:32px;font-size:26px}.menu-toggle{display:flex;flex-direction:column;gap:5px}.menu-toggle span{width:19px;height:2px;background:#fff}.main-nav{display:none;position:absolute;top:68px;left:0;width:100%;background:#111;padding:20px 25px 25px;flex-direction:column;align-items:flex-start;border-top:1px solid #333}.main-nav.open{display:flex}.main-nav a{font-size:11px;padding:7px 0}.header-actions{gap:8px}.search-panel{top:68px;padding:12px}.hero{display:flex;flex-direction:column;align-items:stretch;padding:58px 23px 35px;min-height:0}.hero:before{background:linear-gradient(180deg,#111 0%,#111 48%,#1a1a1a 48%,#171717 100%)}.hero h1{font-size:65px}.hero-copy{font-size:12px;margin:20px 0}.hero-stats{margin-top:30px;gap:14px}.hero-stats strong{font-size:21px}.hero-stats span{font-size:6px}.hero-visual{height:280px;margin-top:25px}.hero-visual img{height:90%;width:100%}.hero-ring{width:270px;height:270px}.ring-two{width:320px;height:320px}.hero-caption{bottom:8%;left:5%}.hero-caption b{font-size:19px}.hero-side-label{display:none}.ticker{height:39px}.ticker-track{font-size:11px;min-width:1100px}.section{padding:68px 20px}.section-heading{align-items:flex-start;gap:20px;flex-direction:column;margin-bottom:27px}.section h2{font-size:49px}.under-link{font-size:8px}.scale-grid{grid-template-columns:1fr 1fr;gap:10px}.scale-card{height:240px}.scale-large{grid-column:span 2;height:260px}.scale-info{left:16px;bottom:17px}.scale-info h3{font-size:31px}.scale-info span{font-size:7px}.products-section{padding-top:65px;padding-bottom:65px}.filter-row{align-items:flex-start;gap:12px;flex-direction:column;padding-bottom:10px}.filter-tabs{gap:16px;flex-wrap:wrap}.filter-btn{font-size:8px;padding-bottom:10px}.results-count{align-self:flex-end}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 11px}.product-image{height:165px}.product-badge{font-size:6px;top:8px;left:8px;padding:6px}.product-art{width:82%;height:48px}.product-art:before{height:27px;top:-18px}.product-art:after{bottom:-12px}.quick-add{height:34px;transform:none;font-size:7px}.product-card h3{font-size:11px;line-height:1.4}.product-meta{font-size:6px}.price{font-size:11px}.feature-banner{grid-template-columns:1fr}.feature-image{min-height:240px;background-position:center 55%}.feature-content{padding:40px 25px 55px}.feature-content h2{font-size:62px}.feature-vertical{right:12px;top:15px}.promise-grid{grid-template-columns:1fr;gap:24px}.promise{border-bottom:1px solid #ddd;padding-bottom:20px}.section-intro{font-size:11px}.testimonial-section{padding:65px 22px}.testimonial-section blockquote{font-size:28px}.review-counter{right:4px;bottom:-26px}.faq-section{padding-top:65px;padding-bottom:75px}.faq-list{margin:0}.faq-list summary{font-size:11px}.footer-top{grid-template-columns:1fr 1fr;gap:30px 20px}.footer-brand{grid-column:span 2}.footer-news{grid-column:span 2}.footer-bottom{flex-direction:column;gap:10px;line-height:1.5}.center-action{margin-top:35px}}
 @media(pre
 /* ===== REDLINE CONTACT DESIGN ===== */
-.social-shortcut svg {
-  width: 16px;
-  height: 16px;
+
+/* SOCIAL ICON SIZE AND BRAND COLORS */
+
+.header-actions .social-shortcut {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  background: transparent;
+}
+
+.header-actions .social-shortcut svg {
+  width: 18px !important;
+  height: 18px !important;
+  max-width: 18px;
+  max-height: 18px;
   display: block;
 }
+
+.header-actions .whatsapp-icon {
+  color: #25D366;
+}
+
+.header-actions .instagram-icon {
+  color: #E4405F;
+}
+
+.header-actions .email-icon {
+  color: #E32636;
+}
+
+.header-actions .social-shortcut:hover {
+  background: #292929;
+  transform: translateY(-2px);
+}
+
